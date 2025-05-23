@@ -8,67 +8,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            min-height: 100lvh;
-            background-image: url(./images/background.webp);
-            background-size: cover;
-            background-position: center;
-            font-family: "Cookie", cursive;
-            font-weight: 400;
-            font-style: normal;
-            display: grid;
-            place-items: center;
-        }
-
-        h1 {
-            font-weight: normal;
-            color: #fdfdfd;
-            text-shadow: 0 0 1rem #dfdfdf;
-            font-size: clamp(3rem, 12vw, 6rem);
-            opacity: 0;
-            margin-inline: 1rem;
-            text-align: center;
-            transition: all 1s ease-in-out;
-        }
-
-        .fadeIn {
-            opacity: 1;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="cookie-regular">
-    <h1 id="message"></h1>
+    <canvas id="gradient-canvas"></canvas>
+    <h1 class="title" id="message"></h1>
 
-    <script>
-        function delay(ms) {
-            return new Promise(resolve => setTimeout(resolve, ms));
-        }
-
-        async function showMessage({ text, keepTime = 3000 }) {
-            const msgElm = document.getElementById("message")
-            await delay(1000)
-            msgElm.innerText = text
-            msgElm.classList.add("fadeIn")
-            if (keepTime === 0) return true
-            await delay(keepTime)
-            msgElm.classList.remove("fadeIn")
-        }
-
-        document.addEventListener("DOMContentLoaded", async function () {
-            await showMessage({ text: "hello" })
-            await showMessage({ text: "welcome", keepTime: 5000 })
-            await showMessage({ text: "preparing nice things", keepTime: 7000 })
-            await showMessage({ text: "coming soon", keepTime: 0 })
-        })
-    </script>
+    <script src="gradient-bg.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
