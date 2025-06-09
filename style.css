@@ -26,20 +26,21 @@
 }
 
 body {
-  background-color: var(--black);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: var(--white);
   min-height: 100vh;
+  overflow: hidden;
+  background: #0a0a0f;
 }
 
 h1 {
   font-family: "__Calc_Sans_Font", sans-serif;
   background-color: var(--white);
   line-height: 10rem;
-  font-size: 7rem;
+  font-size: 2.25rem;
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
@@ -48,6 +49,15 @@ h1 {
   text-wrap: nowrap;
   text-align: center;
   width: 100vw;
+  transition-duration: 1s;
+
+  @media screen and (min-width:640px) {
+    font-size: 3.75rem;
+  }
+
+  @media screen and (min-width:768px) {
+    font-size: 8rem;
+  }
 }
 
 @keyframes title {
@@ -66,7 +76,7 @@ h1 {
   100% {
     opacity: 1;
     line-height: 100%;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.25rem;
   }
 }
 
@@ -118,30 +128,29 @@ nav,
 footer {
   opacity: 0;
   color: var(--white-50);
-  font-size: .9rem;
+  font-size: 0.9rem;
+  margin-block: 4.5rem;
 }
 
 nav {
-  margin-block-end: 5rem;
   display: flex;
   gap: 1rem;
-  animation: fade-up 1s 3s ease-in forwards;
+  animation: fade-up 1s 3500ms ease-in forwards;
 }
 
 nav a {
-    text-decoration: none;
-    color: var(--white-50);
-    transition: color 300ms ease-in-out;
+  text-decoration: none;
+  color: var(--white-50);
+  transition: color 300ms ease-in-out;
 }
 
 nav a:hover {
-    color: var(--white);
+  color: var(--white);
 }
 
 footer {
-    margin-block-start: 5rem;
-    animation: fade-down 1s 3s ease-in forwards;
-
+  animation: fade-down 1s 3500ms ease-in forwards;
+  text-align: center;
 }
 
 @keyframes fade-up {
@@ -164,4 +173,37 @@ footer {
     opacity: 1;
     transform: translateY(0%);
   }
+}
+
+/* Basic styling for the canvas container */
+.canvas-container {
+  width: 100%; /* Fill viewport width */
+  height: 100%; /* Fill viewport height */
+  aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio, adjust as needed */
+  overflow: hidden; /* Ensure content respects border-radius */
+  display: flex; /* Flexbox to ensure canvas fills container */
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: -10;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: light-up 4s 1s ease-in forwards;
+}
+
+/* Canvas element styling */
+canvas {
+  display: block; /* Remove extra space below canvas */
+  width: 100%; /* Make canvas fill its parent container */
+  height: 100%; /* Make canvas fill its parent container */
+}
+
+@keyframes light-up {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
