@@ -40,6 +40,7 @@ h1 {
   font-family: "__Calc_Sans_Font", sans-serif;
   background-color: var(--white);
   line-height: 8rem;
+  letter-spacing: normal;
   font-size: 2.25rem;
   color: transparent;
   -webkit-background-clip: text;
@@ -64,7 +65,7 @@ h1 {
   0% {
     line-height: 0%;
     opacity: 0;
-    letter-spacing: 0.75rem;
+    letter-spacing: 0.25em;
   }
   25% {
     line-height: 0%;
@@ -76,7 +77,6 @@ h1 {
   100% {
     line-height: 100%;
     opacity: 1;
-    letter-spacing: 0.25rem;
   }
 }
 
