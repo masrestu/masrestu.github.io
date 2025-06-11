@@ -103,7 +103,7 @@ h1 {
   0% {
     transform: translateX(100%);
   }
-  30% {
+  40% {                  
     transform: translateX(0);
     opacity: 1;
   }
@@ -120,7 +120,7 @@ h1 {
   0% {
     transform: translateX(-100%) translateY(-100%);
   }
-  30% {
+  40% {
     transform: translateX(0) translateY(-100%);
     opacity: 1;
   }
