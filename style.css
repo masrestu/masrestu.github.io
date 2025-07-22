@@ -45,12 +45,13 @@ h1 {
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-stroke: 0.125rem var(--white);
+  /* -webkit-text-stroke: 0.125rem var(--white); */
   animation: title 3s ease-out forwards;
   text-wrap: nowrap;
   text-align: center;
   width: 100vw;
   transition-duration: 1s;
+  font-weight: 400;
 
   @media screen and (min-width: 640px) {
     font-size: 3.75rem;
@@ -63,18 +64,22 @@ h1 {
 
 @keyframes title {
   0% {
+    -webkit-text-stroke: 0.125rem var(--white);
     line-height: 0%;
     opacity: 0;
     letter-spacing: 0.25em;
-  }
-  25% {
+}
+25% {
+    -webkit-text-stroke: 0.1rem var(--white);
     line-height: 0%;
     opacity: 0;
-  }
-  80% {
+}
+80% {
+    -webkit-text-stroke: 0.05rem var(--white);
     opacity: 100%;
-  }
-  100% {
+}
+100% {
+    -webkit-text-stroke: 0rem transparent;
     line-height: 100%;
     opacity: 1;
   }
